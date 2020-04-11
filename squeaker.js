@@ -34,14 +34,28 @@ Hooks.on("init", () => {
     default: false,
     type: Boolean,
   });
+
+  game.settings.register("squeaker", "rollactive", {
+    name: "Disable roll sound when the chat is visible",
+    scope: "client",
+    config: true,
+    default: false,
+    type: Boolean,
+  });
 });
 
 Hooks.on("renderChatMessage", (msg, html) => {
-  let chatIsActive =
-    ui.sidebar.activeTab == "chat" && game.settings.get("squeaker", "active");
-  if (!msg.isRoll && !chatIsActive && game.settings.get("squeaker", "enable")) {
+  let chatIsActive = ui.sidebar.activeTab == "chat";
+  if (
+    !msg.isRoll &&
+    (!chatIsActive || game.settings.get("squeaker", "active")) &&
+    game.settings.get("squeaker", "enable")
+  ) {
     msg.data.sound = game.settings.get("squeaker", "chatsound");
-  } else if (game.settings.get("squeaker", "disableroll")) {
+  } else if (
+    game.settings.get("squeaker", "disableroll") ||
+    (chatIsActive && game.settings.get("squeaker", "rollactive"))
+  ) {
     msg.data.sound = null;
   }
 });
