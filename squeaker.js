@@ -1,7 +1,6 @@
 Hooks.on("init", () => {
   game.settings.register("squeaker", "chatsound", {
-    name: "Enable chat sound",
-    hint: "If set to false there won't be any chat sound.",
+    name: "Chat Sound file link",
     scope: "client",
     config: true,
     default: "modules/squeaker/squeak.wav",
