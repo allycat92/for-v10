@@ -1,6 +1,6 @@
 Hooks.on("init", () => {
   game.settings.register("squeaker", "chatSound", {
-    name: "Chat Sound file link",
+    name: "Chat sound file path",
     scope: "world",
     config: true,
     default: "modules/squeaker/squeak.wav",
@@ -11,7 +11,7 @@ Hooks.on("init", () => {
 
   game.settings.register("squeaker", "enableChat", {
     name: "Enable chat sound",
-    hint: "If set to false there won't be any chat sound.",
+    hint: "Plays the sound when a chat message is received.",
     scope: "client",
     config: true,
     default: false,
@@ -19,7 +19,7 @@ Hooks.on("init", () => {
   });
 
   game.settings.register("squeaker", "chatActive", {
-    name: "Disable chat sound when the chat is visible",
+    name: "Disable the chat sound when the chat is visible.",
     scope: "client",
     config: true,
     default: true,
@@ -27,7 +27,7 @@ Hooks.on("init", () => {
   });
 
   game.settings.register("squeaker", "rollSound", {
-    name: "Roll Sound file link",
+    name: "Roll sound file path",
     scope: "world",
     config: true,
     default: "sounds/dice.wav",
@@ -36,7 +36,7 @@ Hooks.on("init", () => {
 
   game.settings.register("squeaker", "enableRoll", {
     name: "Enable dice roll sound",
-    hint: "If set to false there won't be any dice sound.",
+    hint: "Plays the sound when a roll is received.",
     scope: "client",
     config: true,
     default: false,
@@ -44,7 +44,7 @@ Hooks.on("init", () => {
   });
 
   game.settings.register("squeaker", "rollActive", {
-    name: "Disable roll sound when the chat is visible",
+    name: "Disable the roll sound when the chat is visible.",
     scope: "client",
     config: true,
     default: false,
@@ -67,5 +67,4 @@ Hooks.on("renderChatMessage", (msg, html) => {
       msg.data.sound = null;
     }
   }
-  console.log(msg);
 });
