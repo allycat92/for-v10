@@ -18,6 +18,14 @@ Hooks.on("init", () => {
     type: Boolean,
   });
 
+  game.settings.register("squeaker", "active", {
+    name: "Disable chat sound when the chat is visible",
+    scope: "client",
+    config: true,
+    default: true,
+    type: Boolean,
+  });
+
   game.settings.register("squeaker", "disableroll", {
     name: "Disable dice roll sound",
     hint: "If set to false there won't be any dice sound.",
@@ -29,7 +37,9 @@ Hooks.on("init", () => {
 });
 
 Hooks.on("renderChatMessage", (msg, html) => {
-  if (!msg.isRoll && game.settings.get("squeaker", "enable")) {
+  let chatIsActive =
+    ui.sidebar.activeTab == "chat" && game.settings.get("squeaker", "active");
+  if (!msg.isRoll && !chatIsActive && game.settings.get("squeaker", "enable")) {
     msg.data.sound = game.settings.get("squeaker", "chatsound");
   } else if (game.settings.get("squeaker", "disableroll")) {
     msg.data.sound = null;
