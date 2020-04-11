@@ -1,4 +1,4 @@
-# ModBox
+# Squeaker
 This FoundryVTT Module adds settings for chat sounds, you can set a chat notification sound and disable roll sounds.
 The default squeaking sound is brought to you by InspectorJ from freesound.org.
 Based on an idea from Gen Kitty.
