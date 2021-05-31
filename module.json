@@ -2,7 +2,7 @@
     "name": "squeaker",
     "title": "Squeaker",
     "description": "<p>Chat sounds configuration</p>",
-    "version": "1.2.6",
+    "version": "1.2.7",
     "author": "U~man",
     "scripts": [],
     "esmodules": [
@@ -16,5 +16,5 @@
     "manifest": "https://gitlab.com/mesfoliesludiques/foundryvtt-squeaker/-/raw/master/module.json",
     "download": "https://gitlab.com/mesfoliesludiques/foundryvtt-squeaker/-/archive/master/foundryvtt-squeaker-master.zip",
     "minimumCoreVersion": "0.5.5",
-    "compatibleCoreVersion": "0.7.9"
+    "compatibleCoreVersion": "0.8.5"
   }
