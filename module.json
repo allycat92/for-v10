@@ -13,8 +13,8 @@
     "packs": [],
     "languages": [],
     "url": "https://gitlab.com/mesfoliesludiques/foundryvtt-squeaker",
-    "manifest": "https://gitlab.com/mesfoliesludiques/foundryvtt-squeaker/-/raw/master/module.json",
-    "download": "https://gitlab.com/mesfoliesludiques/foundryvtt-squeaker/-/archive/master/foundryvtt-squeaker-master.zip",
+    "manifest": "https://github.com/allycat92/for-v10/releases/download/latest/module.json",
+    "download": "https://github.com/allycat92/for-v10/eleases/download/latest/module.zip",
     "minimumCoreVersion": "0.5.5",
     "compatibleCoreVersion": "0.8.5"
   }
