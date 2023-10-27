@@ -59,15 +59,15 @@ Hooks.on("renderChatMessage", (msg, html) => {
   let chatIsActive = ui.sidebar.activeTab == "chat";
   if (msg.isRoll) {
     if (game.settings.get("squeaker", "enableRoll") && (!chatIsActive || !game.settings.get("squeaker", "rollActive"))) {
-      msg.data.sound = game.settings.get("squeaker", "rollSound");
+      msg.sound = game.settings.get("squeaker", "rollSound");
     } else {
-      msg.data.sound = null;
+      msg.sound = null;
     }
   } else {
     if (game.settings.get("squeaker", "enableChat") && (!chatIsActive || !game.settings.get("squeaker", "chatActive"))) {
-      msg.data.sound = game.settings.get("squeaker", "chatSound");
+      msg.sound = game.settings.get("squeaker", "chatSound");
     } else {
-      msg.data.sound = null;
+      msg.sound = null;
     }
   }
 });
